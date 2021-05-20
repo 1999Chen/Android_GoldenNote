@@ -50,25 +50,11 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull TodoAdapter.ViewHolder holder, int position) {
 
         Event event = eventList.get(position);
-//        Calendar calendar = Calendar.getInstance();
-//        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-//        String date = event.getDate();
-//        String currentdate = dateFormat.format(calendar.getTime());
-//
-//        calendar.add(Calendar.DATE, 1);
-//        String tomorrowdate = dateFormat.format(calendar.getTime());
-//
-//        date = format(date);
-//        System.out.println(date);
+
 //
         holder.title.setText(event.getTitle());
         holder.description.setText(event.getDescription());
-//        if (date.equals(currentdate)) {
-//            holder.date.setText("Today");
-//        } else if (date.equals(tomorrowdate)) {
-//            holder.date.setText("Tomorrow");
-//
-//        } else {
+
             holder.date.setText(event.getDate());
 //        }
         holder.deleteButton.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +63,7 @@ public class TodoAdapter extends RecyclerView.Adapter<TodoAdapter.ViewHolder> {
                 deleteEvent(event.getId());
                 System.out.println(event.getTitle() + "-------------" + event.getId());
                 notifyItemRemoved(holder.getAdapterPosition());
-//                notifyItemRangeChanged(holder.getAdapterPosition(), eventList.size());
+
             }
         });
     }
