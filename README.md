@@ -3,7 +3,7 @@
 Hi！This is my android project. Here I implemented a reminder for users to add notes, which is inspired by "Reminder" from ios when I was using my iphone. It is worth mentioning that the “today” and "tomorrow" part really attracted me.
 
 Requirements:
-
+1.As a user, I want to be able to.
 1.As a user, I want to be able to have my account signed in to the system
 2.As a user, I want to be able to add an event to the reminder.
 3.As a user, I want to be able to check all events I make before.
