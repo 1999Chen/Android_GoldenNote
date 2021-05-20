@@ -64,17 +64,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onStart() {
         super.onStart();
-
-//        FirebaseUser account = auth.getCurrentUser();
-//        if(account != null){
-//            Toast.makeText(this,"U Signed In successfully",Toast.LENGTH_LONG).show();
-//            startMainActivity(account);
-//        }
-//        else {
-//            Toast.makeText(this,"U Didnt signed in",Toast.LENGTH_LONG).show();
-//        }
-//
-
     }
 
     @Override
@@ -108,11 +97,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
-            // Signed in successfully, show authenticated UI.
             firebaseAuthWithGoogle(account.getIdToken());
         } catch (ApiException e) {
-            // The ApiException status code indicates the detailed failure reason.
-            // Please refer to the GoogleSignInStatusCodes class reference for more information.
+            System.out.println("error login");
         }
     }
 
@@ -124,14 +111,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            //Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = auth.getCurrentUser();
                             startMainActivity(user);
                         } else {
-                            // If sign in fails, display a message to the user.
-                            //Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            Snackbar.make(findViewById(R.id.sign_in_button), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
+                            Snackbar.make(findViewById(R.id.sign_in_button), "login Failed.", Snackbar.LENGTH_SHORT).show();
                         }
 
                     }
