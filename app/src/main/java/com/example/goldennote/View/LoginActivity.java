@@ -145,10 +145,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         startMainActivity(account);
         startActivityForResult(signInIntent, 666);
 
-
-
     }
-
 
 
     public void signOut(View v) {
@@ -161,10 +158,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 });
     }
 
-    private void startLoginActivity(FirebaseUser user){
-        Intent intent = new Intent(com.example.goldennote.View.LoginActivity.this, com.example.goldennote.View.MainActivity.class);
-        intent.putExtra("account",user);
-        startActivity(intent);
+    public void startLoginActivity(FirebaseUser user){
+
     }
 
 

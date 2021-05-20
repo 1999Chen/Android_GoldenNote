@@ -114,11 +114,15 @@ public class ProfileFragment extends Fragment {
     public void signOut(){
         System.out.println("-------------sign out------------");
 
+        auth.signOut();
         Intent intent = new Intent(view.getContext(), LoginActivity.class);
         startActivity(intent);
-        auth.signOut();
+
 
     }
+
+
+
 
 
 }
